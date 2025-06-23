@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Metro Bundler",
+      "type": "shell",
+      "command": "npm start",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Android",
+      "type": "shell",
+      "command": "npx react-native run-android",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run iOS",
+      "type": "shell",
+      "command": "npx react-native run-ios",
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
