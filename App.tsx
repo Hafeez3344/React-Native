@@ -1,19 +1,31 @@
 import React from 'react';
-import {View, Text, Button } from 'react-native';
+import { View, Text, Button, ScrollView } from 'react-native';
 import CompanyData from './components/CompanyData';
 import ButtonAndOnPress from './components/ButtonAndOnPress';
+import Welcome from './components/Props';
+import State from './components/State';
+import Style from './components/Style';
+import TextChange from './components/TextInput';
+import Form from './components/Form';
+import FlatList from './components/FlatList';
 
 function App() {
 
-  let name = "Hafeez"
-  let age = 25;
+
 
   return (
-    <View>
-      {/* <CompanyData/> */}
-      <ButtonAndOnPress/>
-
-    </View>
+    <ScrollView>
+      <View>
+        <CompanyData />
+        <ButtonAndOnPress />
+        <Welcome />
+        <State />
+        <Style />
+        <TextChange />
+        <Form />
+        <FlatList/>
+      </View>
+    </ScrollView>
   );
 }
 
