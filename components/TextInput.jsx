@@ -9,7 +9,7 @@ const TextChange = () => {
     <View>
       <Text style={{ fontSize: 20 }}>Handle Text input in React</Text>
       <Text style={{fontSize: 20}}>Your Name is : {name}</Text>
-      <TextInput style={styles.textInput}  placeholder='Enter Your name' value={name} onChangeText={(text) => setName(text)}/>
+      <TextInput style={styles.textInput}  placeholder='Enter Your name here' value={name} onChangeText={(text) => setName(text)}/>
         <Button title='Clear Input Value' onPress={()=> setName('')}/>
     </View>
   );

@@ -11,6 +11,7 @@ export default function ButtonAndOnPress() {
     alert(val);
   };
   return (
+    
     <View style={{ justifyContent: 'center', alignItems: 'center' }}>
       <Text style={{ fontSize: 30 }}>Button and OnPress Event</Text>
       <Button title="On Press" onPress={clickCount} />
