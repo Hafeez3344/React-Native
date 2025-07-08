@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 
 const CompanyData = () => {
   return (
@@ -7,6 +7,7 @@ const CompanyData = () => {
       <Text>Company Name: Netrex</Text>
       <Text>Company Location: Lahore</Text>
       <Text>Company Country: Pak</Text>
+
     </View>
   );
 };

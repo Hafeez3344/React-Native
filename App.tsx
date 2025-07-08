@@ -13,14 +13,16 @@ import ResponsiveFlex from './components/ResponsiveFlex';
 import TouchAbleBtn from './components/TouchAbleBtn';
 import PlatformComp from './components/PlatformComp';
 import NewWebView from './components/NewWebView';
+import NativeNavigation from './components/NativeNavigation';
+import ApiCall from './components/ApiCall';
+import MapApiData from './components/MapApiData';
 
 function App() {
 
 
   return (
-      <ScrollView>
         <View>
-          <CompanyData />
+          {/* <CompanyData />
           <ButtonAndOnPress />
           <Welcome />
           <State />
@@ -32,9 +34,11 @@ function App() {
           <ResponsiveFlex/>
           <TouchAbleBtn/>
           <PlatformComp/>
-          {/* <NewWebView/> */}
+          <NewWebView/> */}
+          {/* <NativeNavigation/> */}
+          {/* <ApiCall/> */}
+          <MapApiData/>
         </View>
-      </ScrollView>
   );
 }
 
