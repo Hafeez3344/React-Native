@@ -22,12 +22,13 @@ const MapApiData = () => {
               <Text style={{ fontSize: 18, marginTop: 10 }}>
                 ID: {item.id}
               </Text>
-              <Text key={item.id} style={{ fontSize: 18, marginTop: 10 }}>
+              <Text  style={{ fontSize: 18, marginTop: 10 }}>
                 Title: {item.title}
               </Text>
-              <Text key={item.id} style={{ fontSize: 18, marginTop: 10 }}>
+              <Text  style={{ fontSize: 18, marginTop: 10 }}>
                 Body: {item.body}
               </Text>
+              
             </View>
           ))
         : null}

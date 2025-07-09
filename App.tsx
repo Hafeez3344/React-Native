@@ -16,6 +16,9 @@ import NewWebView from './components/NewWebView';
 import NativeNavigation from './components/NativeNavigation';
 import ApiCall from './components/ApiCall';
 import MapApiData from './components/MapApiData';
+import SearchWithApi from './components/SearchWithApi';
+import UseRef from './components/UseRef';
+import AsyncStorage from './components/AsyncStorage';
 
 function App() {
 
@@ -37,7 +40,10 @@ function App() {
           <NewWebView/> */}
           {/* <NativeNavigation/> */}
           {/* <ApiCall/> */}
-          <MapApiData/>
+          {/* <MapApiData/> */}
+          {/* <SearchWithApi /> */}
+          {/* <UseRef/> */}
+          <AsyncStorage/>
         </View>
   );
 }
