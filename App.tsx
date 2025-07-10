@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, Button, ScrollView, SafeAreaView,Image } from 'react-native';
 import CompanyData from './components/CompanyData';
 import ButtonAndOnPress from './components/ButtonAndOnPress';
 import Welcome from './components/Props';
@@ -19,8 +19,12 @@ import MapApiData from './components/MapApiData';
 import SearchWithApi from './components/SearchWithApi';
 import UseRef from './components/UseRef';
 import AsyncStorage from './components/AsyncStorage';
+import Header from './components/Header';
+import Product from './components/Product';
 
 function App() {
+
+  
 
 
   return (
@@ -43,7 +47,9 @@ function App() {
           {/* <MapApiData/> */}
           {/* <SearchWithApi /> */}
           {/* <UseRef/> */}
-          <AsyncStorage/>
+          {/* <AsyncStorage/> */}
+            <Header/>
+            <Product/>
         </View>
   );
 }
