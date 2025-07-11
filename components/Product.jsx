@@ -1,9 +1,13 @@
 import { View, Text, Image, Button, ScrollView } from 'react-native';
 import React from 'react';
+import {addToCart, removeFromCart} from './redux/action'; // Import the action creator
+import { useDispatch, useSelector } from 'react-redux'; // Import useDispatch hook from react-redux
+import Header from './Header';
 
-const Product = () => {
-
-      let products = [
+const Product = ({ navigation }) => {
+    const dispatch = useDispatch();
+    const cartItems = useSelector((state) => state.reducer);
+    let products = [
         {
             id: 1,
             name: 'Samsung Galaxy S21',
@@ -33,22 +37,40 @@ const Product = () => {
         }
     ]
 
-  return (
-    <ScrollView>
-      {products.map((item) => (
-        <View key={item.id} style={{ flexDirection: 'column', alignItems: 'center', margin: 10, padding: 10, borderWidth: 1, borderColor: '#ccc', borderRadius: 5}}>
-          <Text style={{ fontWeight: 'bold', textAlign: "center" }}>{item.name}</Text>
-          <Text style={{ fontWeight: 'bold',  textAlign: "center" }}>{item.color}</Text>
-          <Text style={{ fontWeight: 'bold', textAlign: "center" }}>{item.price}</Text>
-          <Image
-            source={{ uri: item.image }}
-            style={{ width: 100, height: 100 }}
-          />
-          <Button title="Add to Cart" />
-        </View>
-      ))}
-    </ScrollView>
-  );
+    const handleAddToCart = (item) => {
+        dispatch(addToCart(item));
+    };
+
+    const handleRemoveFromCart = (item) => {
+        dispatch(removeFromCart(item.name));
+    };
+
+    return (
+      <ScrollView>
+        <Button title='Go to User' onPress={() => navigation.navigate('User')} />
+          <Header/>
+            {products.map((item) => {
+                // Correct logic: show Add to Cart if NOT in cart, Remove if in cart
+                const isAdded = cartItems && cartItems.some((element) => element.name === item.name);
+                return (
+                    <View key={item.id} style={{ flexDirection: 'column', alignItems: 'center', margin: 10, padding: 10, borderWidth: 1, borderColor: '#ccc', borderRadius: 5 }}>
+                        <Text style={{ fontWeight: 'bold', textAlign: "center" }}>{item.name}</Text>
+                        <Text style={{ fontWeight: 'bold', textAlign: "center" }}>{item.color}</Text>
+                        <Text style={{ fontWeight: 'bold', textAlign: "center" }}>{item.price}</Text>
+                        <Image
+                            source={{ uri: item.image }}
+                            style={{ width: 100, height: 100 }}
+                        />
+                        {!isAdded ?
+                            <Button title="Add to Cart" onPress={() => handleAddToCart(item)} />
+                            :
+                            <Button title="Remove from Cart" onPress={() => handleRemoveFromCart(item)} />
+                        }
+                    </View>
+                );
+            })}
+        </ScrollView>
+    );
 };
 
 export default Product;

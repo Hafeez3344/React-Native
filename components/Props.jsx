@@ -1,6 +1,7 @@
 import { View, Text, Button } from 'react-native'
 import React, { useState } from 'react'
 
+
 const Welcome = () => {
   const [name, setName] = useState ("Hafeez")
   return (

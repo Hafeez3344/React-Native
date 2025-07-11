@@ -19,40 +19,51 @@ import MapApiData from './components/MapApiData';
 import SearchWithApi from './components/SearchWithApi';
 import UseRef from './components/UseRef';
 import AsyncStorage from './components/AsyncStorage';
-import Header from './components/Header';
 import Product from './components/Product';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+const stack = createNativeStackNavigator();
+
 
 function App() {
-
-  
-
-
-  return (
-        <View>
-          {/* <CompanyData />
-          <ButtonAndOnPress />
-          <Welcome />
-          <State />
-          <Style />
-          <TextChange />
-          <Form />
-          <FlatList />
-          <UseEffectCompDidUpdate />
-          <ResponsiveFlex/>
-          <TouchAbleBtn/>
-          <PlatformComp/>
-          <NewWebView/> */}
-          {/* <NativeNavigation/> */}
-          {/* <ApiCall/> */}
-          {/* <MapApiData/> */}
-          {/* <SearchWithApi /> */}
-          {/* <UseRef/> */}
-          {/* <AsyncStorage/> */}
-            <Header/>
-            <Product/>
-        </View>
-  );
+    return (
+        <NavigationContainer>
+            <stack.Navigator>
+                <stack.Screen name="Home" component={Product} />
+                <stack.Screen name="User" component={Welcome} />
+            </stack.Navigator>
+        </NavigationContainer>
+        
+    );
 }
+
+  // return (
+  //       <View>
+  //         {/* <CompanyData />
+  //         <ButtonAndOnPress />
+  //         <Welcome />
+  //         <State />
+  //         <Style />
+  //         <TextChange />
+  //         <Form />
+  //         <FlatList />
+  //         <UseEffectCompDidUpdate />
+  //         <ResponsiveFlex/>
+  //         <TouchAbleBtn/>
+  //         <PlatformComp/>
+  //         <NewWebView/> */}
+  //         {/* <NativeNavigation/> */}
+  //         {/* <ApiCall/> */}
+  //         {/* <MapApiData/> */}
+  //         {/* <SearchWithApi /> */}
+  //         {/* <UseRef/> */}
+  //         {/* <AsyncStorage/> */}
+  //          
+  //           <Product/>
+  //       </View>
+  // );
+// }
 
 
 
